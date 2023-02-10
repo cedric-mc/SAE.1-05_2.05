@@ -1,6 +1,5 @@
 # Tolède
 ## SAE 2-05 Recueil de besoins, Ville de Tolède
-### Cédric Mariya Constantine
 # Markdown Cheat Sheet
 
 Thanks for visiting [The Markdown Guide](https://www.markdownguide.org)!
