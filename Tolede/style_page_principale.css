@@ -1,0 +1,267 @@
+@font-face {
+    font-family: "Dyno Bold";
+    src: url("Police/Dyno\ Bold.ttf");
+}
+
+@font-face {
+    font-family: "Dyno Regular";
+    src: url("Police/Dyno\ Regular.ttf");
+}
+
+@font-face {
+    font-family: "Cicle Gordita";
+    src: url("Police/Cicle\ Gordita.ttf");
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+html,body
+{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* Partie présentation -------------------------------------------------------------------------------------------------------------------------------------*/ 
+
+header
+{
+    background-color: #333;
+    height: 10%;
+    z-index: 10;
+    position:static;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 2px solid #ffffff;
+}
+
+/* Menu de la page */
+
+.menu .toggle
+{
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    color:white;
+    display: flex;
+    justify-content: left;
+    text-align: left;
+    z-index: 100;
+    font-size: 2rem;
+    transition: transform 2.25s;
+    transform: translateX(3px) rotate(180deg);
+    cursor: pointer;
+    background-image: url(img/logo_menu-sans_fond.png);
+    background-repeat: no-repeat;
+    background-position: -17px;
+    background-size: 110px,110px;
+}
+
+.menu
+{
+    position: relative;
+    width: 15%;
+    height: auto;
+    display: grid;
+    min-width: 5%;
+    justify-content: left;
+    align-items: left;
+    z-index: 20;
+}
+
+.menu li{
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    color: var(--clr);;
+    left: 0;
+    list-style: none;
+    transition: 0.5s;
+    transition-delay: calc(0.1s * var(--i));
+    transform-origin: 0px;
+    transform: translateY(0px) translateX(0px);
+}
+
+.menu.active li
+{
+    transform: translateY(calc(10px + 70px * var(--i)));
+}
+
+.menu li a
+{
+    margin: 0;
+    padding: 0;
+    background-color: #f7e6ca;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px ;
+    height: 60px;
+    color: var(--clr);
+    border: 2px solid var(--clr);
+    border-radius: 50%;
+    font-size: 1.5em;
+    transform: translateY(10px) translateX(50px);
+    transition: 0.5s;
+}
+
+.menu li a img
+{
+    width: 100%;
+    height:100%;
+    border-radius: 40px;
+}
+
+.menu li a:hover{
+    transition: 0;
+    background: #f7af3e;
+    border: 1px double #333;
+    color: #333;
+    width: 60px ;
+    height: 60px;
+    box-shadow: 0 0 10px #f7af3e,
+    0 0 30px #f7af3e,
+    0 0 50px #f7af3e; 
+}
+
+.toggle:hover
+{
+    filter: grayscale(100%);
+}
+
+.menu.active .toggle{
+    transform: translateX(3px) rotate(0deg);
+}
+
+/* Logos de haut de page */
+
+.logos{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 50%;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    justify-content: space-between;
+}
+
+.logos img{
+    height: 100%;
+    width: auto;
+}
+
+/* Parametre de connexion et de changement de langue */
+
+.connexion{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100%;
+    width: 20%;
+}
+
+.connexion img{
+    margin-top: 5%;
+    height: 60%;
+    width: auto;
+}
+
+/* Partie principale -------------------------------------------------------------------------------------------------------------------------------------*/ 
+
+main
+{
+    padding: 0;
+    background-color: rgb(255, 255, 255);
+    height: 90%;
+    width:100%;
+}
+
+.scroll-block
+{
+    display: flex;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 0px;
+    scroll-snap-type: x mandatory;
+    height: 100%;
+    flex-direction: row;
+}
+
+.scroll-block .item
+{
+    position: relative;
+    background-color:#333;
+    scroll-snap-align: start;
+    flex:0 0 100%;
+    padding: 10px;
+    height: 90%;
+    border-radius: 5px;
+    height: 100%;
+    width: auto;
+    overflow-x:hidden;
+    overflow-y:hidden;
+    border-bottom: 1px solid black;
+}
+
+.Titre{
+    float: right;
+}
+
+/* Page 1 - Accueil*/
+
+/* Page 2 - Histoire*/
+
+/* Page 3 - Monuments */
+
+.tableau_monuments{
+    border: 2px solid #ea5c0d;
+}
+
+.tableau_monuments tr{
+    border: 1px solid #ea5c0d;
+}
+
+.tableau_monuments tr td{
+    border: 1px solid #ea5c0d;
+}
+
+/* Page 4 - Map */
+
+/* Page 5 - Contact */
+
+/* Nav à la fin de chaque pages*/
+
+/* Scroll bar*/
+
+body::-webkit-scrollbar
+{
+	width: 5px;
+    border-radius: 20px;
+	background-color: #2f363e;
+}
+
+body::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+	background: linear-gradient(#f7af3e,#ea5c0d);
+}
+
+.scroll-block::-webkit-scrollbar
+{
+	width: 5px;
+    border-radius: 20px;
+	background-color: #2f363e;
+}
+
+.scroll-block::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+	background: linear-gradient(#f7af3e,#ea5c0d);
+}
