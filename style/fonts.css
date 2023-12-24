@@ -1,0 +1,49 @@
+@font-face {
+    font-family: "Cicle-Fina";
+    src: url("../fonts/Cicle_Fina.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Cicle-Fina-Italic";
+    src: url("../fonts/Cicle_Fina_Italic.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Cicle-Semi";
+    src: url("../fonts/Cicle_Semi.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Cicle-Semi-Italic";
+    src: url("../fonts/Cicle_Semi_Italic.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Cicle-Gordita";
+    src: url("../fonts/Cicle_Gordita.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Cicle-Gordita-Italic";
+    src: url("../fonts/Cicle_Gordita_Italic.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Dyno-Regular";
+    src: url("../fonts/Dyno_Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Dyno-Italic";
+    src: url("../fonts/Dyno_Italic.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Dyno-Bold";
+    src: url("../fonts/Dyno_Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Dyno-Bold-Italic";
+    src: url("../fonts/Dyno_Bold_Italic.ttf") format("truetype");
+}

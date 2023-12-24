@@ -1,0 +1,1094 @@
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+footer {
+    font-family: "Cicle-Semi";
+}
+
+/* Partie présentation -------------------------------------------------------------------------------------------------------------------------------------*/
+
+header {
+    background-color: #333;
+    height: 10%;
+    z-index: 10;
+    position: static;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 2px solid #ffffff;
+}
+
+/* Menu de la page */
+
+.menu .toggle {
+    position: relative;
+    width: 76px;
+    height: 76px;
+    border-radius: 40px;
+    color: white;
+    display: flex;
+    justify-content: left;
+    text-align: left;
+    z-index: 100;
+    font-size: 2rem;
+    transition: transform 1s;
+    transform: translateX(3px) rotate(90deg);
+    cursor: pointer;
+    background-color: #3f3f3f;
+    background-image: url("../img/logo/menu.png");
+    backdrop-filter: grayscale(100%);
+    background-repeat: no-repeat;
+    background-position: -17px;
+    background-size: 110px, 110px;
+}
+
+.menu {
+    position: relative;
+    width: 10%;
+    height: auto;
+    display: grid;
+    min-width: 5%;
+    justify-content: left;
+    align-items: left;
+    z-index: 20;
+}
+
+.menu li {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    color: var(--clr);
+    left: 0;
+    list-style: none;
+    transition: 0.5s;
+    transition-delay: calc(0.05s * var(--i));
+    transform-origin: 0px;
+    transform: translateY(0px) translateX(0px);
+}
+
+.menu.active li {
+    transform: translateY(calc(10px + 70px * var(--i)));
+}
+
+.menu li a {
+    margin: 0;
+    padding: 0;
+    background-color: #f7e6ca;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    color: var(--clr);
+    border: 2px solid var(--clr);
+    border-radius: 50%;
+    font-size: 1.5em;
+    transform: translateY(10px) translateX(50px);
+    transition: 0.2s;
+}
+
+.menu li a img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding-left: 5%;
+}
+
+#map {
+    padding-left: -2%;
+}
+
+.menu li a:hover {
+    transition: 0;
+    background: #f7af3e;
+    border: 1px double #333;
+    color: #333;
+    width: 60px;
+    height: 60px;
+    box-shadow: 0 0 10px #f7af3e,
+        0 0 30px #f7af3e,
+        0 0 50px #f7af3e;
+}
+
+.toggle:hover {
+    filter: grayscale(100%);
+}
+
+.menu.active .toggle {
+    transform: translateX(3px) rotate(-90deg);
+}
+
+/* Logos de haut de page */
+
+.logos {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 50%;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.logos img {
+    height: 100%;
+    width: auto;
+}
+
+.logos #logo_grp {
+    width: 15%;
+    height: 150%;
+}
+
+/* Parametre de connexion et de changement de langue */
+
+.connexion {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: auto;
+    width: 15%;
+    padding-right: 10px;
+}
+
+.connexion a,
+.connexion a img {
+    height: auto;
+    width: 70%;
+    border-radius: 10px;
+}
+
+/* Partie principale -------------------------------------------------------------------------------------------------------------------------------------*/
+
+main {
+    padding: 0;
+    background-color: rgb(255, 255, 255);
+    height: 90%;
+    width: 100%;
+}
+
+.scroll-block {
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    padding: 0px;
+    scroll-snap-type: x mandatory;
+    height: 100%;
+    flex-direction: row;
+}
+
+.scroll-block .item {
+    position: relative;
+    background-color: #6e6e6e;
+    scroll-snap-align: start;
+    flex: 0 0 100%;
+    padding: 10px;
+    height: 90%;
+    border-radius: 5px;
+    height: 100%;
+    width: auto;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    border-bottom: 1px solid black;
+}
+
+/* Page 1 - Accueil ----------------------------------------------------------------------------------------------------*/
+
+/* Présentation */
+
+#Accueil {
+    margin: 0;
+    padding: 0;
+    overscroll-behavior-y: contain;
+}
+
+#Accueil #presentation {
+    padding: 0;
+    background: url("../img/tolede_menu.jpg"), rgba(255, 255, 255, 0.5);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width: 100%;
+    height: 60%;
+    animation: back_zoom 7s linear infinite;
+}
+
+@keyframes back_zoom {
+    from {
+        background-size: 100% 170%;
+    }
+
+    50% {
+        background-size: 100% 175%;
+    }
+
+    100% {
+        background-size: 100% 170%;
+    }
+}
+
+#titre h1 {
+    font-family: "Dyno-Bold";
+}
+
+#titre h2 {
+    font-family: "Dyno-Bold-Italic";
+}
+
+#Accueil #presentation #titre {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 100%;
+}
+
+#Accueil #presentation #titre div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 40%;
+    text-align: center;
+}
+
+#Accueil #presentation #titre div h1 {
+    background-color: rgba(0, 0, 0, 0.7);
+    font-size: 150px;
+    color: #ea5c0d;
+    text-shadow: 2px 2px 2px #f7af3e, 4px 5px 6px #085cbd;
+}
+
+#Accueil #presentation #titre div h2 {
+    background-color: rgba(0, 0, 0, 0.7);
+    font-size: 50px;
+    color: #ea5c0d;
+    text-shadow: 0px 0px 1px #ffffff;
+}
+
+#Accueil #presentation a {
+    justify-self: end;
+    width: 7%;
+    height: 15%;
+}
+
+#Accueil #presentation a img {
+    width: 100%;
+}
+
+/* Contenu de l'accueil ----------------------------------------------------------------------------------------------------------------------------------------------*/
+
+#contenu_Accueil {
+    margin: 0;
+    margin-left: 2%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#contenu_Accueil h3 {
+    background: #EA5C0D;
+    border: 2px solid #F7AF3E;
+    box-shadow: inset -10px 7px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    text-indent: 20px;
+    width: 70%;
+    padding: 10px;
+    font-size: 40px;
+    font-family: "Dyno-Regular";
+    font-weight: 100;
+    color: white;
+}
+
+#contenu_Accueil p {
+    margin: 0;
+    padding: 0;
+    width: 90%;
+    margin-left: 3%;
+    font-size: 30px;
+    font-family: "Cicle-Fina";
+    font-weight: bold;
+    line-height: 1.5;
+    color: white;
+}
+
+#contenu_Accueil a {
+    text-decoration: none;
+    color: #085cbd;
+    font-weight: bold;
+}
+
+#contenu_Accueil h4 {
+    margin-top: 5%;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+    font-family: "Cicle-Gordita";
+    color: black;
+}
+
+#contenu_Accueil nav {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 3%;
+}
+
+#contenu_Accueil nav a {
+    font-size: 50px;
+    padding: 20px;
+    font-family: "Dyno-Regular";
+    text-decoration: none;
+    color: #ffffff;
+    background-color: rgb(32, 121, 255);
+    border: 2px solid #ffffff;
+    border-radius: 20px;
+}
+
+#contenu_Accueil nav a:hover {
+    animation: shake 0.8s;
+}
+
+@keyframes shake {
+    from {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-10deg);
+    }
+
+    50% {
+        transform: rotate(10deg);
+    }
+
+    75% {
+        transform: rotate(-10deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+
+}
+
+/* Page 2 - Histoire --------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* Présentation */
+
+#Histoire {
+    margin: 0;
+    padding: 0;
+    overscroll-behavior-y: contain;
+}
+
+#Histoire #presentation {
+    padding: 0;
+    background: url("../img/fond_hist.jpg"), rgba(255, 255, 255, 0.5);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 130% 250%;
+    background-blend-mode: initial;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width: 100%;
+    height: 60%;
+    animation: back_left_to_right 20s linear infinite;
+}
+
+@keyframes back_left_to_right {
+    from {
+        background-size: 130% 250%;
+        background-position: right center;
+    }
+
+    25% {
+        background-size: 130% 250%;
+        background-position: center center;
+    }
+
+    50% {
+        background-size: 115% 220%;
+        background-position: left center;
+    }
+
+    80% {
+        background-size: 100% 200%;
+        background-position: center;
+    }
+
+    100% {
+        background-size: 130% 250%;
+        background-position: right center;
+    }
+}
+
+#Histoire #presentation #titre {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 100%;
+}
+
+#Histoire #presentation #titre div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+    text-align: center;
+}
+
+#Histoire #presentation #titre div h1 {
+    background-color: rgba(0, 0, 0, 0.7);
+    font-size: 150px;
+    font-weight: bold;
+    color: #ea5c0d;
+    text-shadow: 2px 2px 2px #f7af3e, 4px 5px 6px #085cbd;
+}
+
+#Histoire #presentation #titre div h2 {
+    background-color: rgba(0, 0, 0, 0.7);
+    font-size: 50px;
+    font-weight: bold;
+    color: #ea5c0d;
+    text-shadow: 0px 0px 1px #ffffff;
+}
+
+#Histoire #presentation address {
+    position: absolute;
+    top: 56%;
+    right: 1%;
+    font-size: 16px;
+}
+
+#Histoire #presentation a {
+    justify-self: end;
+    width: 7%;
+    height: 15%;
+}
+
+#Histoire #presentation a img {
+    width: 100%;
+}
+
+/* Contenu de l'histoire */
+
+#contenu_Histoire {
+    margin: 0;
+    margin-left: 2%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#contenu_Histoire h3 {
+    background: #EA5C0D;
+    border: 2px solid #F7AF3E;
+    box-shadow: inset -10px 7px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    text-indent: 20px;
+    width: 70%;
+    padding: 10px;
+    font-size: 40px;
+    font-family: "Dyno-Regular";
+    font-weight: 100;
+    color: white;
+}
+
+#contenu_Histoire img {
+    margin: 0;
+    padding: 0;
+    image-resolution: initial;
+    width: 95%;
+    height: auto;
+}
+
+#histoire {
+    padding-top: 2%;
+    padding-bottom: 3%;
+}
+
+#histoire h2 {
+    font-family: "Cicle-Fina";
+    font-size: 40px;
+    text-decoration: underline;
+    text-decoration-color: #F7AF3E;
+    text-underline-position: under;
+    font-weight: bold;
+    padding: 10px;
+    color: #F7AF3E;
+}
+
+#histoire p {
+    margin: 0;
+    padding: 0;
+    width: 90%;
+    margin-left: 3%;
+    font-size: 30px;
+    font-family: "Cicle-Fina";
+    font-weight: bold;
+    line-height: 1.5;
+    color: white;
+}
+
+/* Page 3 - Monuments ------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+/* Présentation */
+
+#Monuments {
+    margin: 0;
+    padding: 0;
+    overscroll-behavior-y: contain;
+}
+
+#Monuments #presentation {
+    padding: 0;
+    background: url("../img/puerta.jpg"), rgba(255, 255, 255, 0.5);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 160%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width: 100%;
+    height: 60%;
+    animation: back__top_to_bottom 10s linear infinite;
+}
+
+@keyframes back__top_to_bottom {
+    from {
+        background-position: top;
+    }
+
+    40% {
+        background-position: center;
+    }
+
+    70% {
+        background-position: bottom;
+    }
+
+    100% {
+        background-position: top;
+    }
+}
+
+#Monuments #presentation #titre {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 100%;
+}
+
+#Monuments #presentation #titre div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 40%;
+    text-align: center;
+}
+
+#Monuments #presentation #titre div h1 {
+    background-color: rgba(0, 0, 0, 0.7);
+    font-size: 150px;
+    font-weight: bold;
+    color: #ea5c0d;
+    text-shadow: 2px 2px 2px #f7af3e, 4px 5px 6px #085cbd;
+}
+
+#Monuments #presentation #titre div h2 {
+    background-color: rgba(0, 0, 0, 0.7);
+    font-size: 50px;
+    font-weight: bold;
+    color: #ea5c0d;
+    text-shadow: 0px 0px 1px #ffffff;
+}
+
+#Monuments #presentation a {
+    justify-self: end;
+    width: 7%;
+    height: 15%;
+}
+
+#Monuments #presentation a img {
+    width: 100%;
+}
+
+/* Contenu de la page Monument */
+
+#contenu_Monuments {
+    margin: 0;
+    margin-left: 2%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#contenu_Monuments h3 {
+    background: #EA5C0D;
+    border: 2px solid #F7AF3E;
+    box-shadow: inset -10px 7px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    text-indent: 20px;
+    width: 70%;
+    padding: 10px;
+    font-size: 40px;
+    font-family: "Dyno-Regular";
+    font-weight: 100;
+    color: white;
+}
+
+.monument {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    height: 100%;
+    background-color: #333;
+    border: 2px inset #ea5c0d;
+    padding: 10px;
+    border-radius: 50px;
+    justify-content: center;
+}
+
+
+.monument h1 {
+    font-family: "Dyno-Regular";
+    font-size: 30px;
+    color: #ea5c0d;
+    text-align: center;
+}
+
+
+.monument img {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    border-radius: 50px;
+}
+
+.tableau_monuments {
+    width: 100%;
+    height: auto;
+    gap: 10px;
+}
+
+
+.tableau_monuments tr {
+    width: 100%;
+    height: 400px;
+    border-bottom: 1px solid black;
+}
+
+.tableau_monuments p {
+    color: white;
+    font-family: "Cicle-Fina";
+    font-size: 20px;
+}
+
+
+/* Page 4 - Map ---------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* Présentation */
+
+#Map {
+    margin: 0;
+    padding: 0;
+    overscroll-behavior-y: contain;
+}
+
+#Map #presentation {
+    padding: 0;
+    background: url("../img/Fond_map.png"), rgba(255, 255, 255, 0.5);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width: 100%;
+    height: 60%;
+    animation: back_dezoom 30s linear infinite;
+}
+
+@keyframes back_dezoom {
+    from {
+        background-size: 130% 250%;
+    }
+
+    25% {
+        background-size: 100% 200%;
+    }
+
+    100% {
+        background-size: 130% 250%;
+    }
+}
+
+#Map #presentation #titre {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 100%;
+}
+
+#Map #presentation #titre div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 40%;
+    text-align: center;
+}
+
+#Map #presentation #titre div h1 {
+    background-color: rgba(0, 0, 0, 0.7);
+    font-size: 150px;
+    font-weight: bold;
+    color: #ea5c0d;
+    text-shadow: 2px 2px 2px #f7af3e, 4px 5px 6px #085cbd;
+}
+
+#Map #presentation #titre div h2 {
+    background-color: rgba(0, 0, 0, 0.7);
+    font-size: 50px;
+    font-weight: bold;
+    color: #ea5c0d;
+    text-shadow: 0px 0px 1px #ffffff;
+}
+
+#Map #presentation a {
+    justify-self: end;
+    width: 7%;
+    height: 15%;
+}
+
+#Map #presentation a img {
+    width: 100%;
+}
+
+/* Contenu de la page Map */
+
+#contenu_Map {
+    margin: 0;
+    margin-left: 2%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#contenu_Map iframe {
+    margin: auto;
+    padding: 0;
+}
+
+/* Page 5 - Contact --------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* Présentation */
+
+#Contact {
+    margin: 0;
+    padding: 0;
+    overscroll-behavior-y: contain;
+}
+
+#Contact #presentation {
+    padding: 0;
+    background: url("../img/tolede_menu.jpg"), rgba(255, 255, 255, 0.5);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width: 100%;
+    height: 60%;
+}
+
+#Contact #presentation #titre {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 100%;
+}
+
+#Contact #presentation #titre div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 60%;
+    text-align: center;
+}
+
+#Contact #presentation #titre div h1 {
+    background-color: rgba(0, 0, 0, 0.7);
+    font-size: 110px;
+    font-weight: bold;
+    color: #ea5c0d;
+    text-shadow: 2px 2px 2px #f7af3e, 4px 5px 6px #085cbd;
+}
+
+#Contact #presentation #titre div h2 {
+    background-color: rgba(0, 0, 0, 0.7);
+    font-size: 50px;
+    font-weight: bold;
+    color: #ea5c0d;
+    text-shadow: 0px 0px 1px #ffffff;
+}
+
+#Contact #presentation a {
+    justify-self: end;
+    width: 7%;
+    height: 15%;
+}
+
+#Contact #presentation a img {
+    width: 100%;
+}
+
+/* Contenu de la page Contact */
+
+
+#contenu_Contact {
+    margin: 0;
+    margin-left: 2%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Formulaire */
+
+#contenu_Contact h2 {
+    font-family: "Cicle-Gordita";
+    font-size: 40px;
+    text-decoration: underline;
+    text-decoration-color: #F7AF3E;
+    text-underline-position: under;
+    font-weight: bold;
+    padding: 10px;
+}
+
+form div {
+    font-family: "Cicle-Fina";
+    font-size: 30px;
+    color: #2b0f00;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+    padding: 1%;
+}
+
+form div input {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    font-size: 25px;
+    font-family: "Dyno-Regular";
+    border-radius: 5px;
+}
+
+
+/* Disposition des cases à cocher */
+
+#favoris {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 25px;
+    color: black;
+    width: 100%;
+}
+
+#favoris div {
+    flex: 1 1 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 25px;
+    color: black;
+    gap: 5px;
+}
+
+#favoris input {
+    width: 40px;
+    height: 40px;
+}
+
+/* Commentaire */
+
+textarea {
+    height: 100px;
+    font-size: 25px;
+    font-family: "Dyno-Regular";
+}
+
+/* Boutons envoyer/effacer */
+
+#fin {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+    height: auto;
+}
+
+#fin div {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+}
+
+#fin div input {
+    background-color: #085cbd;
+    border: 2px outset white;
+    color: #ffffff;
+    width: 30%;
+}
+
+#fin p {
+    justify-self: flex-start;
+    font-size: 20px;
+    color: black;
+}
+
+/* Présentation de l'equipe finale */
+
+.presentation_equipe {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+#membre {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px; /* Ajustez selon votre préférence pour l'espacement entre les membres */
+
+
+}
+
+#membre .name-function {
+    margin-left: 30%;
+    flex: 1; /* Pour occuper tout l'espace disponible à gauche */
+    padding-right: 20px; /* Ajustement pour séparer le texte de l'image */
+}
+
+#membre h1, #membre h2 {
+    margin: 0; /* Supprimez les marges par défaut */
+}
+
+#membre img {
+    width: 40%; /* Taille de la photo */
+    margin-right: 30%;
+}
+
+/* Footer --------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+footer {
+    width: 100%;
+    height: 10%;
+}
+
+/* Scroll bar*/
+
+.scroll-block .item::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 20px;
+    background-color: #2f363e;
+}
+
+.scroll-block .item::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: linear-gradient(#f7af3e, #ea5c0d);
+}
+
+/* Navigation à la fin du site */
+
+nav {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 3%;
+    gap: 20px;
+}
+
+nav a {
+    font-size: 50px;
+    padding: 20px;
+    font-family: "Dyno-Regular";
+    text-decoration: none;
+    color: #ffffff;
+    background-color: rgb(32, 121, 255);
+    border: 2px solid #ffffff;
+    border-radius: 20px;
+}
+
+nav a:hover {
+    animation: shake 0.8s;
+}
+
+h3 {
+    background: #EA5C0D;
+    border: 2px solid #F7AF3E;
+    box-shadow: inset -10px 7px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    text-indent: 20px;
+    width: 70%;
+    padding: 10px;
+    font-size: 40px;
+    font-family: "Dyno-Regular";
+    font-weight: 100;
+    color: white;
+}
+
+#membre {
+    color: white;
+}
+
+#membre img {
+    padding-left: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 30%;
+    height: auto;
+}
+
+#membre h1 {
+    font-family: "Dyno-Regular";
+}
+
+#membre h2 {
+    font-family: "Cicle-Semi";
+}
+
+#membre p {
+    font-family: "Cicle-Semi";
+}

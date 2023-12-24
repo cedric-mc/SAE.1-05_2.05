@@ -1,0 +1,108 @@
+<?php
+//On démarre une nouvelle session
+session_start();
+
+if (!isset($_SESSION["language"])) {
+    $_SESSION["language"] = "eng";
+} else if (isset($_GET["language"])) {
+    $_SESSION["language"] = $_GET["language"];
+}
+$language = $_SESSION["language"];
+?>
+<!DOCTYPE html>
+<html class="all-border">
+    <head>
+        <title>Cédric Mariya Constantine | Étudiant en Informatique</title>
+        <meta charset="UTF-8">
+        <meta name="Author" content="Mariya Constantine Cédric">
+        <meta name="Made" content="mariyaconsta02@edu.univ-eiffel.fr">
+        <meta name="description"
+            content="Étudiant en BUT informatique à l'IUT Marne la Vallée. Voici mon Portfolio pour mieux me connaître." />
+        <meta name="keywords" content="portfolio, développement web, but, informatique, Cédric Mariya Constantine">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Responsive -->
+        <meta name="robots" content="index,follow">
+        <!-- <meta http-equiv="Refresh" content="30"> -->
+
+        <link rel="shortcut icon" href="../img/favicon.png"> <!-- Favicon -->
+
+        <!-- Fichiers CSS -->
+        <link rel="stylesheet" href="style/page_principale.css">
+        <link rel="stylesheet" href="style/fonts.css">
+        <style>
+            html, main, footer {
+                height: auto;
+                margin: 50px;
+                padding: 50px;
+                background-color: #3f3f3f;
+            }
+
+            header {
+                width: 100%;
+                text-align: center;
+            }
+
+            h1 {
+                text-align: center;
+                margin-top: 8%;
+                font-size: 3rem;
+                color: white;
+                font-family: "Dyno-Regular";
+            }
+
+            main, footer {
+                font-family: "Cicle-Semi";
+                color: white;
+            }
+
+            footer {
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+    </head>
+
+
+    <body>
+
+        <header>
+            <h1>Mentions légales</h1>
+        </header>
+
+        <main>
+            <p>
+                Siteweb de Tolède, ville du patrimoine mondial du forum UNESCO.
+                <br>
+                Email : <a href="mailto: toledo-sae@googlegroups.com">toledo-sae@googlegroups.com</a>
+                <br>
+                Sources d'images non originale : <a href="https://icons8.com/icons">ICONS</a> et <a href="https://www.flaticon.com/">FLATICON</a>.
+                <br>
+                Hébergement : Université Gustave Eiffel.
+                <br>
+                Situation social : Étudiants.
+                <br>
+                Adresse d'étude : 2 Rue Albert Einstein, 77420 Champs-sur-Marne
+                <br>
+                Téléphone : 01 60 95 85 85
+                <br>
+                Département Informatique : 01 60 95 85 11
+                <br>
+                Informations légales : <a href="https://www.univ-eiffel.fr/mentions-legales/">Mentions légales</a>
+                <br>
+                Informations complémentaires :
+                <ul>
+                    <li>Aucune utilisation de cookies</li>
+                    <li>Aucune utilisation de données personnelles</li>
+                    <li>Aucune utilisation de données de navigation</li>
+                    <li>Aucune utilisation de données de localisation</li>
+                    <li>Aucune utilisation de données de connexion</li>
+                    <li>Aucune utilisation de données de santé</li>
+                </ul>
+            </p>
+        </main>
+
+        <footer>
+            <p>® - <a href="index.php">Revenir sur la page d'Accueil</a></p>
+        </footer>
+    </body>
+</html>
